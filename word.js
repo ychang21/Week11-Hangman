@@ -4,6 +4,7 @@
 // require your letter objects
 
 var Letter = require('./letter.js');
+var numLetters = 0;
 var Word = function(word) {
     this.word = word;
     this.letters = [];
@@ -23,6 +24,15 @@ var Word = function(word) {
         // }
 
         // return this.present;
+		for (var i = 0; this.letters.length < 0; i++) {
+			if (this.letters[i].appear) {
+				numLetters++;
+			}
+		}
+		if (numLetters == this.letters.length) {
+			this.present = true;
+		}
+		return this.present;
     };
 
     this.letterPresent = function(guess) {
